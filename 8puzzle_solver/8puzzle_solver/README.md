@@ -2,28 +2,6 @@
 
 Bài toán 8-Puzzle giải bằng các thuật toán tìm kiếm cơ bản.
 
-## Yêu cầu
-
-- Python 3.x (tkinter có sẵn trong Python)
-- Không cần cài thêm thư viện nào
-
-## Cách chạy
-
-```bash
-cd 8puzzle_solver
-python main.py
-```
-
-## Các thuật toán
-
-| Thuật toán | Mô tả |
-|---|---|
-| **BFS** | Breadth-First Search - Tìm kiếm theo chiều rộng, dùng FIFO queue |
-| **DFS** | Depth-First Search - Tìm kiếm theo chiều sâu, dùng LIFO stack |
-| **DLS** | Depth-Limited Search - DFS với giới hạn độ sâu |
-| **IDS** | Iterative Deepening Search - Lặp DLS với limit tăng dần |
-| **UCS** | Uniform Cost Search - Tìm kiếm theo chi phí, dùng priority queue |
-
 ## Cấu trúc project
 
 ```
