@@ -8,6 +8,7 @@ from algorithms import (bfs, dfs, dls, ids, ucs, greedy, astar, idastar,
                         simple_hill_climbing, stochastic_hill_climbing,
                         random_restart_hill_climbing, local_beam_search,
                         simulated_annealing, and_or_search, sensorless_search,
+                        backtracking_search, forward_checking_search, ac3_search,
                         is_solvable, GOAL)
 
 GOAL_STATE = GOAL
@@ -95,6 +96,11 @@ ALGO_GROUPS = [
     ("Non-deterministic", "🎲", [
         ("AND-OR Search",     "AND-OR Search"),
         ("Sensorless Search", "Sensorless / Belief State"),
+    ]),
+    ("Constraint Satisfaction", "🔒", [
+        ("Backtracking CSP",    "Backtracking Search"),
+        ("Forward Checking",    "Forward Checking"),
+        ("AC-3",                "Arc Consistency AC-3"),
     ]),
 ]
 
@@ -781,6 +787,9 @@ class PuzzleApp:
             elif algo == "Simulated Annealing": result, nodes = simulated_annealing(start, goal)
             elif algo == "AND-OR Search":     result, nodes = and_or_search(start, goal)
             elif algo == "Sensorless Search": result, nodes = sensorless_search(start, goal)
+            elif algo == "Backtracking CSP":  result, nodes = backtracking_search(start, goal)
+            elif algo == "Forward Checking":  result, nodes = forward_checking_search(start, goal)
+            elif algo == "AC-3":              result, nodes = ac3_search(start, goal)
             else:                             result, nodes = None, 0
             elapsed = time.time() - t0
             self.root.after(0, lambda: self._on_solve_done(
