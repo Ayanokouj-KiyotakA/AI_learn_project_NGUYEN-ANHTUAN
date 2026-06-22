@@ -1,1 +1,0 @@
-# AI_learn_project_NGUYEN-ANHTUAN
